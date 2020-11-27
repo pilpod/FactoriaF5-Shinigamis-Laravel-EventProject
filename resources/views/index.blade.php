@@ -6,10 +6,10 @@
 -->
 <html>
 	<head>
-		<title>Dopetrope by HTML5 UP</title>
+		<title>Shinigamis Events</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="{{asset('templateHtml//css/main.css')}}" />
+	<link rel="stylesheet" href="{{asset('templateHtml/css/main.css')}}" />
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -17,7 +17,8 @@
 			<!-- Header -->
 				<section id="header">
 					<!-- Logo -->
-						<h1><a href="{{route('index')}}">Shinigamis Events</a></h1>
+					{{-- <h1><a href="{{route('index')}}">Shinigamis Events</a></h1> --}}
+					<img src="{{asset('img/shinigamisLogo.png')}}" alt="logo">
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -225,12 +226,42 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<ul class="dropotron level-0" style="user-select: none; display: none; position: absolute; z-index: 1000;">
+			<li style="white-space: nowrap;"><a href="#" style="display: block;">Lorem ipsum dolor</a></li>
+			<li style="white-space: nowrap;"><a href="#" style="display: block;">Magna phasellus</a></li>
+			<li style="white-space: nowrap;"><a href="#" style="display: block;">Etiam dolore nisl</a></li>
+			<li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;">
+				<a href="#" style="display: block;">Phasellus consequat</a>
+				<ul class="dropotron level-1" style="user-select: none; display: none; position: absolute; z-index: 1001;">
+					<li style="white-space: nowrap;"><a href="#" style="display: block;">Magna phasellus</a></li>
+					<li style="white-space: nowrap;"><a href="#" style="display: block;">Etiam dolore nisl</a></li>
+					<li style="white-space: nowrap;"><a href="#" style="display: block;">Veroeros feugiat</a></li>
+					<li style="white-space: nowrap;"><a href="#" style="display: block;">Nisl sed aliquam</a></li>
+					<li style="white-space: nowrap;"><a href="#" style="display: block;">Dolore adipiscing</a></li>
+				</ul>
+			</li>
+			<li style="white-space: nowrap;"><a href="#" style="display: block;">Veroeros feugiat</a></li>
+		</ul>
+
+	<div id="titleBar"><a href="#navPanel" class="toggle"></a></div>
+
+	<div id="navPanel">
+		<nav>
+			<a class="link depth-0" href="{{route('index')}}" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-0"></span>Home</a>
+			<a class="link depth-0" href="#" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-0"></span>Dropdown</a>
+				<a class="link depth-1" href="#" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-1"></span>Lorem ipsum dolor</a>
+					<a class="link depth-2" href="#" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-2"></span>Magna phasellus</a>
+			<a class="link depth-0" href="left-sidebar.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-0"></span>Left Sidebar</a>
+		</nav>
+	</div>
+
 
 	</body>
 </html>
