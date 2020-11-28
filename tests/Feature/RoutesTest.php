@@ -13,11 +13,13 @@ class RoutesTest extends TestCase
      *
      * @return void
      */
+    use RefreshDatabase;
     public function testRouteHome()
     {
         $response = $this->get('/');
 
         $response->assertStatus(200)
-        ->assertViewIs('welcome');
+        ->assertViewIs('welcome')
+        ->assertSee('Hello');
     }
 }
