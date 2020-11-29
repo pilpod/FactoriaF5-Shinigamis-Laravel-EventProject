@@ -23,8 +23,14 @@ class EventFactory extends Factory
     {
         return [
 
-            
-            
+            'title' => $this->faker->sentence(4),
+            'img' => $this->faker->imageUrl(640, 480, 'cats'),
+            'short_description' => $this->faker->sentence(8),
+            'long_description' => $this->faker->sentence (15),
+            'event_date' => $this->faker->dateTimeBetween('-60 days', '+90 days'),
+            'capacity' => $this->faker->numberBetween(15, 100),
+            'outstanding' => $this->faker->boolean(50),
+
         ];
     }
 }

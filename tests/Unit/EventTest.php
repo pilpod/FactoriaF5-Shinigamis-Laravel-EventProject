@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use PHPUnit\Framework\TestCase;
 use App\Models\Event;
 
- 
+class EventTest extends TestCase
 {
     /**
      * A basic test example.
