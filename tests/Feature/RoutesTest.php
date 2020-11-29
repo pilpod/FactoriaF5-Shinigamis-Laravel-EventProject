@@ -25,6 +25,7 @@ class RoutesTest extends TestCase
 
     public function testRouteDashboard()
     {
+       // $this->withExeptionHandling();
         $response = $this->get(route('dashboard')); 
 
         $response->assertStatus(200)
