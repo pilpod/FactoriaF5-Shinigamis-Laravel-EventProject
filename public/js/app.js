@@ -19395,8 +19395,18 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\xampp\htdocs\DBFactoriaF5\shinigamievents\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\DBFactoriaF5\shinigamievents\resources\css\app.css */"./resources/css/app.css");
+=======
+<<<<<<< HEAD
+__webpack_require__(/*! E:\Giacomo\Xamp-sites\FactoriaF5\ProyectosEnEquipo\Shinigami\ShinigamisEvents\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\Giacomo\Xamp-sites\FactoriaF5\ProyectosEnEquipo\Shinigami\ShinigamisEvents\resources\css\app.css */"./resources/css/app.css");
+=======
+__webpack_require__(/*! C:\xampp\htdocs\ProyectosFACTORIAf5\shirigamisEvents\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\ProyectosFACTORIAf5\shirigamisEvents\resources\css\app.css */"./resources/css/app.css");
+>>>>>>> baadfef6e5df9862b2a86b399657d4cb1553a8f7
+>>>>>>> d782189be1bba119f7a4a549ec6f43857b9d5b38
 
 
 /***/ })

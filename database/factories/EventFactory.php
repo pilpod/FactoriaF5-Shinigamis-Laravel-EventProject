@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\event;
+use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class EventFactory extends Factory
@@ -12,7 +12,7 @@ class EventFactory extends Factory
      *
      * @var string
      */
-    protected $model = event::class;
+    protected $model = Event::class;
 
     /**
      * Define the model's default state.
@@ -22,15 +22,14 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-
-            'title' => $this->faker->sentence(4),
-            'img' => $this->faker->imageUrl(640, 480, 'cats'),
-            'short_description' => $this->faker->sentence(8),
-            'long_description' => $this->faker->sentence (15),
-            'event_date' => $this->faker->dateTimeBetween('-60 days', '+90 days'),
-            'capacity' => $this->faker->numberBetween(15, 100),
-            'outstanding' => $this->faker->boolean(50),
-
+            'title'=> $this->faker->sentence(10),
+            'picture_path'=> $this->faker->imageUrl(640, 480),
+            'short_description'=> $this->faker->sentence(20, false),
+            'duration'=> $this->faker->word,
+            'description'=> $this->faker->paragraph(),
+            'event_date'=> $this->faker->dateTimeBetween('-30 days', '+30 days'),
+            'event_capacity'=> $this->faker->numberBetween(10, 100),
+            'outstanding'=> $this->faker->boolean(false),
         ];
     }
 }
