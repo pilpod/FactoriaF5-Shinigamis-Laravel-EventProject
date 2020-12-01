@@ -20,6 +20,9 @@ class Event extends Model
         'outstanding'
     ];
 
-    
+    public function users() 
+    {
+        return $this->belongsToMany('App\Models\User');
+    }
 
 }

@@ -14,11 +14,14 @@ class CreateEventUserTable extends Migration
     public function up()
     {
         Schema::create('event_user', function (Blueprint $table) {
+
             $table->id();
-            $table->unsignedBigIntenger("id_user");
-            $table->foreign("id_user")->references("id")->on("users")->onDelete("set null");
-            $table->unsignedBigIntenger("id_event");
-            $table->foreign("id_event")->references("id")->on("events")->onDelete("set null");
+            
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('event_id')->nullable();
+            $table->foreign('user_id')->references("id")->on("users");
+            $table->foreign("event_id")->references("id")->on("events");
+            
             $table->timestamps();
         });
     }
