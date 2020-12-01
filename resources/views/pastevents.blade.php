@@ -18,8 +18,9 @@
 			<!-- Header -->
 				<section id="header">
 					<!-- Logo -->
-					{{-- <h1><a href="{{route('index')}}">Shinigamis Events</a></h1> --}}
-					<img src="{{asset('img/shinigamisLogo.png')}}" alt="logo">
+					<a href="{{route('index')}}">
+						<img src="{{asset('img/shinigamisLogo.png')}}" alt="logo" style="margin: auto;">
+					</a>
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -59,13 +60,13 @@
 						<div class="row">
 							<div class="col-12">
 
-								<!-- Portfolio -->
+								<!-- Past Events -->
 									<section>
 										<header class="major">
-											<h2>Next Events</h2>
+											<h2>Past Events</h2>
 										</header>
 										<div class="row">
-											@foreach ($events as $event)
+											@foreach ($pastEvents as $event)
 											<div class="col-4 col-6-medium col-12-small">
 												<section class="box">
 												<a href="#" class="image featured"><img src="{{$event->picture_path}}" alt="" /></a>
@@ -76,17 +77,12 @@
 													<div style="margin-top: 10px">
 														<span>Fecha: <strong>{{$event->event_date->format('d-m-Y H:00')}}</strong></span>
 													</div>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button alt">Subscribe</a></li>
-														</ul>
-													</footer>
 												</section>
 											</div>
 											@endforeach
 										</div>
 										<section class="container">
-											{{$events->links()}}
+											{{$pastEvents->links()}}
 										</section>
 									</section>
 							</div>

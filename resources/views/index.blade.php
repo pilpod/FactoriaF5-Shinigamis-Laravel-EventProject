@@ -9,8 +9,8 @@
 		<title>Shinigamis Events</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="{{asset('templateHtml/css/main.css')}}" />
-	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="{{asset('templateHtml/css/main.css')}}" />
+		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -19,7 +19,10 @@
 				<section id="header">
 					<!-- Logo -->
 					{{-- <h1><a href="{{route('index')}}">Shinigamis Events</a></h1> --}}
-					<img src="{{asset('img/shinigamisLogo.png')}}" alt="logo">
+					<a href="{{route('index')}}">
+						<img src="{{asset('img/shinigamisLogo.png')}}" alt="logo" style="margin: auto;">
+					</a>
+
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -28,15 +31,15 @@
 								@if(Route::has('login'))
 									@auth
 										<li>
-											<a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
+											<a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Dashboard') }}</a>
 										</li>
 									@else
 										<li>
-											<a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Login') }}</a>
+											<a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Login') }}</a>
 										</li>
 										@if (Route::has('register'))
 											<li>
-												<a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
+												<a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Register') }}</a>
 											</li>												
 										@endif
 									@endauth
@@ -59,7 +62,7 @@
 						<div class="row">
 							<div class="col-12">
 
-								<!-- Portfolio -->
+								<!-- Events -->
 									<section>
 										<header class="major">
 											<h2>Next Events</h2>
