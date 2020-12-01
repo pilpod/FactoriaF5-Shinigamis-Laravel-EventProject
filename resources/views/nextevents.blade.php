@@ -89,31 +89,6 @@
 											{{$events->links()}}
 										</section>
 									</section>
-
-									<section>
-										<header class="major">
-											<h2>Past Events</h2>
-										</header>
-										<div class="row">
-											@foreach ($pastEvents as $event)
-												<div class="col-4 col-6-medium col-12-small">
-													<section class="box">
-													<a href="#" class="image featured"><img src="{{$event->picture_path}}" alt="" /></a>
-														<header>
-															<h3>{{$event->title}}</h3>
-														</header>
-														<p>{{$event->short_description}}</p>
-														<div style="margin-top: 10px">
-															<span>Fecha: <strong>{{$event->event_date->format('d-m-Y H:00')}}</strong></span>
-														</div>
-													</section>
-												</div>
-											@endforeach
-										</div>
-										<section class="container">
-											<a href="{{Route('pastevents')}}">Ver más</a>
-										</section>
-									</section>
 							</div>
 						</div>
 					</div>

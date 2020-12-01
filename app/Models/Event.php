@@ -20,6 +20,8 @@ class Event extends Model
         'outstanding'
     ];
 
-    
+    protected $dates = [
+        'event_date',
+    ];
 
 }

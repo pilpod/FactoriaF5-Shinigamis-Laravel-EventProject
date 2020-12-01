@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/pastevents', [IndexController::class, 'pastevents'])->name('pastevents');
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Auth::routes();
