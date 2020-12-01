@@ -20,9 +20,14 @@ class Event extends Model
         'outstanding'
     ];
 
+    protected $dates = [
+        'event_date',
+    ];
+
     public function users() 
     {
         return $this->belongsToMany('App\Models\User');
     }
+    
 
 }

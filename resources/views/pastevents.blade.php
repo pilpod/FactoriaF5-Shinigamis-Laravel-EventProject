@@ -9,8 +9,8 @@
 		<title>Shinigamis Events</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{asset('templateHtml/css/main.css')}}" />
-		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{{asset('templateHtml/css/main.css')}}" />
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -18,11 +18,9 @@
 			<!-- Header -->
 				<section id="header">
 					<!-- Logo -->
-					{{-- <h1><a href="{{route('index')}}">Shinigamis Events</a></h1> --}}
 					<a href="{{route('index')}}">
 						<img src="{{asset('img/shinigamisLogo.png')}}" alt="logo" style="margin: auto;">
 					</a>
-
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -31,15 +29,15 @@
 								@if(Route::has('login'))
 									@auth
 										<li>
-											<a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Dashboard') }}</a>
+											<a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
 										</li>
 									@else
 										<li>
-											<a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Login') }}</a>
+											<a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Login') }}</a>
 										</li>
 										@if (Route::has('register'))
 											<li>
-												<a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Register') }}</a>
+												<a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
 											</li>												
 										@endif
 									@endauth
@@ -62,13 +60,13 @@
 						<div class="row">
 							<div class="col-12">
 
-								<!-- Events -->
+								<!-- Past Events -->
 									<section>
 										<header class="major">
-											<h2>Next Events</h2>
+											<h2>Past Events</h2>
 										</header>
 										<div class="row">
-											@foreach ($events as $event)
+											@foreach ($pastEvents as $event)
 											<div class="col-4 col-6-medium col-12-small">
 												<section class="box">
 												<a href="#" class="image featured"><img src="{{$event->picture_path}}" alt="" /></a>
@@ -79,42 +77,12 @@
 													<div style="margin-top: 10px">
 														<span>Fecha: <strong>{{$event->event_date->format('d-m-Y H:00')}}</strong></span>
 													</div>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button alt">Subscribe</a></li>
-														</ul>
-													</footer>
 												</section>
 											</div>
 											@endforeach
 										</div>
 										<section class="container">
-											{{$events->links()}}
-										</section>
-									</section>
-
-									<section>
-										<header class="major">
-											<h2>Past Events</h2>
-										</header>
-										<div class="row">
-											@foreach ($pastEvents as $event)
-												<div class="col-4 col-6-medium col-12-small">
-													<section class="box">
-													<a href="#" class="image featured"><img src="{{$event->picture_path}}" alt="" /></a>
-														<header>
-															<h3>{{$event->title}}</h3>
-														</header>
-														<p>{{$event->short_description}}</p>
-														<div style="margin-top: 10px">
-															<span>Fecha: <strong>{{$event->event_date->format('d-m-Y H:00')}}</strong></span>
-														</div>
-													</section>
-												</div>
-											@endforeach
-										</div>
-										<section class="container">
-											<a href="{{Route('pastevents')}}">Ver más</a>
+											{{$pastEvents->links()}}
 										</section>
 									</section>
 							</div>
