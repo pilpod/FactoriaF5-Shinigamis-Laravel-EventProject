@@ -53,17 +53,21 @@
 						<div class"container-fluid">
 						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
-							@foreach($events as $item)
+							@foreach($outstanding as $item)
 								<li data-target="#carouselExampleIndicators" data-slide-to="{{$item->event_date}}" class="@if($loop->index==0) active @endif"></li>
 							
 								@endforeach
 							</ol>
 
 							<div class="carousel-inner">
-							@foreach ($events as $item)
+							@foreach ($outstanding as $item)
 								<div class="carousel-item @if($loop->index==0) active @endif">
-								<img src="{{$item->picture_path}}" class="d-block w-100 h-72" alt="">
-								</div>
+									<img src="{{$item->picture_path}}" class="d-block w-100 h-72" alt="">
+									<div class="carousel-caption d-none d-md-block">
+										<h5>{{$item->title}}</h5>
+										<p>{{$item->short_description}}</p>
+									</div>
+							</div>
 								
 							@endforeach
 							<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -200,7 +204,7 @@
 		</nav>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 	</body>
 
