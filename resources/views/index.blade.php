@@ -64,8 +64,9 @@
 								<div class="carousel-item @if($loop->index==0) active @endif">
 									<img src="{{$item->picture_path}}" class="d-block w-100 h-72" alt="">
 									<div class="carousel-caption d-none d-md-block">
-										<h5>{{$item->title}}</h5>
+										<h3>{{$item->title}}</h3>
 										<p>{{$item->short_description}}</p>
+										<input type="button" href="??" value="More Details">
 									</div>
 							</div>
 								
