@@ -27,7 +27,7 @@
 								@if(Route::has('login'))
 									@auth
 										<li>
-											<a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
+											<a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Dashboard') }}</a>
 										</li>
 									@else
 										<li>
