@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $userId = auth()->id();
+        $user = User::find($userId);
+        $userEvents = $user->events()->orderBy('event_date', 'DESC')->get();
+        return view('home', ['events' => $userEvents]);
     }
 }
