@@ -46,11 +46,38 @@
 						</nav>
 
 					<!-- Banner -->
-						{{-- <section id="banner">
-							<header>
-								<h2>Howdy. This is Dopetrope.</h2>
-								<p>A responsive template by HTML5 UP</p>
-							</header>
+						{{-- <section>
+						<div class"container-fluid">
+							<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators">
+							@foreach($outstanding as $item)
+								<li data-target="#carouselExampleIndicators" data-slide-to="{{$item->event_date}}" class="@if($loop->index==0) active @endif"></li>
+							
+								@endforeach
+							</ol>
+
+							<div class="carousel-inner">
+							@foreach ($outstanding as $item)
+								<div class="carousel-item @if($loop->index==0) active @endif">
+									<img src="{{$item->picture_path}}" class="d-block w-100 h-72" alt="">
+									<div class="carousel-caption d-none d-md-block">
+										<h3>{{$item->title}}</h3>
+										<p>{{$item->short_description}}</p>
+										<input type="button" href="??" value="More Details">
+									</div>
+							</div>
+								
+							@endforeach
+							<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+							</div>
+						</div>
 						</section> --}}
 				</section>
 
@@ -137,16 +164,16 @@
 
 	<div id="titleBar"><a href="#navPanel" class="toggle"></a></div>
 
-	<div id="navPanel">
-		<nav>
-			<a class="link depth-0" href="{{route('index')}}" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-0"></span>Home</a>
-			<a class="link depth-0" href="#" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-0"></span>Dropdown</a>
-				<a class="link depth-1" href="#" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-1"></span>Lorem ipsum dolor</a>
-					<a class="link depth-2" href="#" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-2"></span>Magna phasellus</a>
-			<a class="link depth-0" href="left-sidebar.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-0"></span>Left Sidebar</a>
-		</nav>
-	</div>
+	<!-- Scripts -->
+	<script src="{{asset('templateHtml/js/jquery.min.js') }}"></script>
+	<script src="{{asset('templateHtml/js/jquery.dropotron.min.js')}}"></script>
+	<script src="{{asset('templateHtml/js/browser.min.js')}}"></script>
+	<script src="{{asset('templateHtml/js/breakpoints.min.js')}}"></script>
+	<script src="{{asset('templateHtml/js/util.js')}}"></script>
+	<script src="{{asset('templateHtml/js/main.js')}}"></script>
 
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 	</body>
 </html>
