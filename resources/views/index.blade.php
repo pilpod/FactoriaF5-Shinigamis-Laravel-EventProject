@@ -108,7 +108,7 @@
 													</div>
 													<footer>
 														<ul class="actions">
-															<li><a href="#" class="button alt">Subscribe</a></li>
+															<li><a href="{{route('subscribe', ['id' => $event->id])}}" class="button alt">Subscribe</a></li>
 														</ul>
 													</footer>
 												</section>
