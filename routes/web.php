@@ -18,10 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/pastevents', [IndexController::class, 'pastEvents'])->name('pastevents');
-Route::get('/subscribe/{id}', [UserController::class, 'subscribe'])->name('subscribe')->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/unsubscribe/{id}', [UserController::class, 'unsubscribe'])->name('unsubscribe')->middleware('auth');
+Route::get('/subscribe/{id}', [UserController::class, 'subscribe'])->name('subscribe')->middleware('user');
+Route::get('/unsubscribe/{id}', [UserController::class, 'unsubscribe'])->name('unsubscribe')->middleware('user');
+
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('adminDashboard')->middleware('admin');
 
