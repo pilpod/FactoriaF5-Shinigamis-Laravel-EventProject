@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/pastevents', [IndexController::class, 'pastEvents'])->name('pastevents');
-Route::get('/subscribe/{id}', [UserController::class, 'subscribe'])->name('subscribe');
+Route::get('/subscribe/{id}', [UserController::class, 'subscribe'])->name('subscribe')->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/unsubscribe/{id}', [UserController::class, 'unsubscribe'])->name('unsubscribe')->middleware('auth');
 
