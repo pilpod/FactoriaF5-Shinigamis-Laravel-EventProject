@@ -9,7 +9,6 @@
 		<title>Shinigamis Events</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> --}}
 		<link rel="stylesheet" href="{{asset('templateHtml/css/main.css')}}" />
 		<link rel="stylesheet" href="{{asset('templateHtml/css/slideshow.css')}}" />
 		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -51,37 +50,7 @@
 
 			<!-- Banner -->
 				{{-- <section>
-					<div class"container-fluid">
-						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-						@foreach($outstanding as $item)
-							<li data-target="#carouselExampleIndicators" data-slide-to="{{$item->event_date}}" class="@if($loop->index==0) active @endif"></li>
-						
-							@endforeach
-						</ol>
-
-						<div class="carousel-inner">
-						@foreach ($outstanding as $item)
-							<div class="carousel-item @if($loop->index==0) active @endif">
-								<img src="{{$item->picture_path}}" class="d-block w-100 h-72" alt="">
-								<div class="carousel-caption d-none d-md-block">
-									<h3>{{$item->title}}</h3>
-									<p>{{$item->short_description}}</p>
-									<input type="button" href="??" value="More Details">
-								</div>
-							</div>
-						@endforeach
-
-						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
-						</div>
-					</div>
+					
 				</section> --}}
 
 			<!-- Main -->
