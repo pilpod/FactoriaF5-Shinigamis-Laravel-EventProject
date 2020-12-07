@@ -18,7 +18,7 @@
 
             <div class="w-full p-6">
                 <p class="text-gray-700">
-                    {{ $message }} - <a href="{{route('home')}}">Turn to dash</a>    
+                    {{ $message }}: <strong>{{ $title }}</strong> <a href="{{route('home')}}">Turn to dash</a>    
                 </p>
             </div>
         </section>

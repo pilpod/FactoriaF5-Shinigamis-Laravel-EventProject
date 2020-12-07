@@ -16,10 +16,12 @@ class UserController extends Controller
        
         if($userEvents == null) {
             $user->events()->attach($id);
+            $event = $user->events()->find($id);
             return view('suscribeResponse', ['message' => 'Ole tu!!! Inscrito!!!']);
         }
 
-        return view('suscribeResponse', ['message' => 'Ups!! Algo salio mal pringao, ya estas inscrito!!!']);
+        return view('suscribeResponse', [
+            'message' => 'Ups!! Algo salio mal pringao, ya estas inscrito!!!']);
     }
 
     public function unsubscribe($id)
@@ -28,6 +30,8 @@ class UserController extends Controller
         $user = User::find($userId);
         $userEvent = $user->events()->find($id);
         $user->events()->detach($id);
-        return view('suscribeResponse', ['message' => 'Unsubscribe satisfactorio del evento ' . $userEvent->title]);
+        return view('unsubscribeResponse', [
+            'message' => 'Unsubscribe satisfactorio del evento ',
+            'title' => $userEvent->title]);
     }
 }
