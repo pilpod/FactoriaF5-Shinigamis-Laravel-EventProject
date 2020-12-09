@@ -13,7 +13,7 @@
         <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
             <header class="font-semibold sm:bg-green-800 text-yellow-400 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                Dashboard
+                Admin Dashboard
             </header>
 
         </section>

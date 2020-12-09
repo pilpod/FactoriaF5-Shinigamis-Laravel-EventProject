@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +22,8 @@ Route::get('/pastevents', [IndexController::class, 'pastEvents'])->name('pasteve
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/subscribe/{id}', [UserController::class, 'subscribe'])->name('subscribe')->middleware('user');
+Route::get('/unsubscribe/{id}', [UserController::class, 'unsubscribe'])->name('unsubscribe')->middleware('user');
+
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('adminDashboard')->middleware('admin');
 

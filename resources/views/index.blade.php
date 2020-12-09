@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{asset('templateHtml/css/main.css')}}" />
+		<link rel="stylesheet" href="{{asset('templateHtml/css/slideshow.css')}}" />
 		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 		<link href="{{asset('css/app.css')}}" rel="stylesheet">
 </head>
@@ -20,34 +21,32 @@
 			<!-- Header -->
 				<section id="header">
 					<!-- Logo -->
-					{{-- <h1><a href="{{route('index')}}">Shinigamis Events</a></h1> --}}
 					<a href="{{route('index')}}">
 						<img src="{{asset('img/shinigamisLogo.png')}}" alt="logo" style="margin: auto;">
 					</a>
 
-
 					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li class="current"><a href="{{route('index')}}">Home</a></li>
-								@if(Route::has('login'))
-									@auth
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="{{route('index')}}">Home</a></li>
+							@if(Route::has('login'))
+								@auth
+									<li>
+										<a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Dashboard') }}</a>
+									</li>
+								@else
+									<li>
+										<a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Login') }}</a>
+									</li>
+									@if (Route::has('register'))
 										<li>
-											<a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Dashboard') }}</a>
-										</li>
-									@else
-										<li>
-											<a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Login') }}</a>
-										</li>
-										@if (Route::has('register'))
-											<li>
-												<a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Register') }}</a>
-											</li>												
-										@endif
-									@endauth
-								@endif
-							</ul>
-						</nav>
+											<a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Register') }}</a>
+										</li>												
+									@endif
+								@endauth
+							@endif
+						</ul>
+					</nav>
 				</section>
 
 						<!-- Banner -->
@@ -136,7 +135,7 @@
 													</div>
 													<footer>
 														<ul class="actions">
-															<li><a href="#" class="button alt">Subscribe</a></li>
+															<li><a href="{{route('subscribe', ['id' => $event->id])}}" class="button alt">Subscribe</a></li>
 														</ul>
 													</footer>
 												</section>
@@ -194,47 +193,18 @@
 						</div>
 					</div>
 				</section>
-
 		</div>
-
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-		<ul class="dropotron level-0" style="user-select: none; display: none; position: absolute; z-index: 1000;">
-			<li style="white-space: nowrap;"><a href="#" style="display: block;">Lorem ipsum dolor</a></li>
-			<li style="white-space: nowrap;"><a href="#" style="display: block;">Magna phasellus</a></li>
-			<li style="white-space: nowrap;"><a href="#" style="display: block;">Etiam dolore nisl</a></li>
-			<li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;">
-				<a href="#" style="display: block;">Phasellus consequat</a>
-				<ul class="dropotron level-1" style="user-select: none; display: none; position: absolute; z-index: 1001;">
-					<li style="white-space: nowrap;"><a href="#" style="display: block;">Magna phasellus</a></li>
-					<li style="white-space: nowrap;"><a href="#" style="display: block;">Etiam dolore nisl</a></li>
-					<li style="white-space: nowrap;"><a href="#" style="display: block;">Veroeros feugiat</a></li>
-					<li style="white-space: nowrap;"><a href="#" style="display: block;">Nisl sed aliquam</a></li>
-					<li style="white-space: nowrap;"><a href="#" style="display: block;">Dolore adipiscing</a></li>
-				</ul>
-			</li>
-			<li style="white-space: nowrap;"><a href="#" style="display: block;">Veroeros feugiat</a></li>
-		</ul>
 
 	<div id="titleBar"><a href="#navPanel" class="toggle"></a></div>
 
-	<div id="navPanel">
-		<nav>
-			<a class="link depth-0" href="{{route('index')}}" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-0"></span>Home</a>
-			<a class="link depth-0" href="#" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-0"></span>Dropdown</a>
-				<a class="link depth-1" href="#" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-1"></span>Lorem ipsum dolor</a>
-					<a class="link depth-2" href="#" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-2"></span>Magna phasellus</a>
-			<a class="link depth-0" href="left-sidebar.html" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-0"></span>Left Sidebar</a>
-		</nav>
-	</div>
+	<!-- Scripts -->
+	<script src="{{asset('templateHtml/js/jquery.min.js') }}"></script>
+	<script src="{{asset('templateHtml/js/jquery.dropotron.min.js')}}"></script>
+	<script src="{{asset('templateHtml/js/browser.min.js')}}"></script>
+	<script src="{{asset('templateHtml/js/breakpoints.min.js')}}"></script>
+	<script src="{{asset('templateHtml/js/util.js')}}"></script>
+	<script src="{{asset('templateHtml/js/main.js')}}"></script>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
 	</body>
 </html>
