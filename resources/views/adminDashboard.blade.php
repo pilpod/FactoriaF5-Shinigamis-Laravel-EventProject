@@ -21,6 +21,7 @@
         <section style="margin-top: 20px;">
 
             <div class="flex flex-col">
+                <span id="btnCreateEvent"><a href=""><i class="fas fa-plus-square"></i> Create Event</a></span>
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -28,13 +29,13 @@
                         <thead>
                         <tr>
                             <th scope="col" class=" w-1/1 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Title
+                            Event Title
                             </th>
                             <th scope="col" class="w-1/5 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Event date
                             </th>
-                            <th scope="col" class="px-6 py-3 bg-gray-50">
-                            <span class="sr-only">Unsubscribe</span>
+                            <th scope="col" class="w-1/3 px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Options
                             </th>
                         </tr>
                         </thead>
@@ -48,17 +49,14 @@
                                 <div class="text-sm font-medium text-gray-900">
                                     {{$event->title}}
                                 </div>
-                                <div class="text-sm text-gray-500">
-                                    {{$event->short_description}}
-                                </div>
-                                </div>
                             </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                             <div class="text-sm text-gray-900">{{$event->event_date->format('d-m-Y H:00')}}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="{{route('unsubscribe', ['id' => $event->id])}}" class="text-indigo-600 hover:text-indigo-900">Unsubscribe</a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900"><i class="fas fa-edit"></i></i></a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         @endforeach

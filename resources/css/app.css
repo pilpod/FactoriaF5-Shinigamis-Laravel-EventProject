@@ -3,3 +3,8 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+#btnCreateEvent {
+    text-align: right;
+    margin-bottom: 10px;
+}
