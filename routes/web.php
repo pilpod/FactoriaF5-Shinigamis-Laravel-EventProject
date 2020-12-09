@@ -26,4 +26,4 @@ Route::get('/subscribe/{id}', [UserController::class, 'subscribe'])->name('subsc
 Route::get('/unsubscribe/{id}', [UserController::class, 'unsubscribe'])->name('unsubscribe')->middleware('user');
 
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('adminDashboard')->middleware('admin');
-
+Route::get('/admin/event/delete/{id}', [\App\Http\Controllers\AdminController::class, 'delete'])->name('destroyEvent')->middleware('admin');

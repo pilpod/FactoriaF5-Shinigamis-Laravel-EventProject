@@ -4,15 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Event;
 
 class AdminController extends Controller
 {
 
     public function index()
     {
-        $userId = auth()->id();
-        $user = User::find($userId);
-        $userEvents = $user->events()->orderBy('event_date', 'DESC')->get();
-        return view('adminDashboard', ['events' => $userEvents]);
+        $events = Event::orderBy('event_date', 'ASC')->get();
+        
+        return view('adminDashboard', ['events' => $events]);
+    }
+
+    public function delete($id)
+    {
+        $event = Event::find($id);
+        $event->destroy($id);
+        return view('eventDeleted', ['message' => 'OHHH!! Evento eliminado correctamente.']);
     }
 }
