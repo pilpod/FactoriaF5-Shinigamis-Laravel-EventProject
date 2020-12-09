@@ -56,12 +56,17 @@
 						<div class="slider">
 							@foreach($outstanding as $item)
 								<div class="slide" id="slide">
-									<h3>{{$item->title}}</h3>
-									<img src="{{$item->picture_path}}">
-									<p>{{"$item->short_descriptio"}}</p>
+									<p>{{$item->title}}</p>
+									<img src="{{$item->picture_path}}" class="img">
+									<p>{{"$item->short_description"}}</p>
+									<ol class="carousel-indicators">
+										<li class="inline-block mr-3">
+										<label class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+										</li>
+									</ol>
 								</div>
 							@endforeach		
-							</div>
+						</div>
 							
 					<!-- <div class="carousel relative shadow-2xl bg-white">
 						<div class="carousel-inner relative overflow-hidden w-full"> -->
@@ -92,16 +97,12 @@
 							@endforeach -->
 
 							<!-- Add additional indicators for each slide-->
-							@foreach($outstanding as $item)
-							<ol class="carousel-indicators">
-								<li class="inline-block mr-3">
-									<label class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
-								</li>
-							</ol>
+							<!-- @foreach($outstanding as $item)
+							
 							@endforeach
 						</div>
 					</div>
-					</div>
+					</div> -->
 				</section>
 
 						<!--OLD BANNER-->
