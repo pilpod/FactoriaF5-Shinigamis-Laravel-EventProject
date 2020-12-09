@@ -59,7 +59,7 @@ class DashboardTest extends TestCase
         // $this->withoutExceptionHandling();
         // El usuario y sus eventos
         User::factory()
-                    ->has(Event::factory()->count(2), 'events')
+                    ->has(Event::factory()->count(3), 'events')
                     ->create();
         $user = User::find(1);
         $eventsUser = $user->events()->get();
