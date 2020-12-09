@@ -11,8 +11,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{asset('templateHtml/css/main.css')}}" />
 		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<link href="{{asset('css/app.css')}}" rel="stylesheet">
 </head>
+
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
 
@@ -50,7 +51,34 @@
 				</section>
 
 						<!-- Banner -->
-						<section>
+				<section>
+					<div class"container-fluid">
+					<div class="carousel relative shadow-2xl bg-white">
+						<div class="carousel-inner relative overflow-hidden w-full">
+						<!--Slide 1-->
+						@foreach($outstanding as $item)
+							<input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+							<div class="carousel-item absolute opacity-0" style="height:50vh;">
+								<div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center">{{$item->title}}</div>
+							</div>
+							<label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+							<label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+							@endforeach
+							<!-- Add additional indicators for each slide-->
+							@foreach($outstanding as $item)
+							<ol class="carousel-indicators">
+								<li class="inline-block mr-3">
+									<label class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+								</li>
+							</ol>
+							@endforeach
+						</div>
+					</div>
+					</div>
+				</section>
+
+						<!--OLD BANNER-->
+						<!-- <section>
 						<div class"container-fluid">
 						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
@@ -81,7 +109,7 @@
 								<span class="sr-only">Next</span>
 							</a>
 							</div></div>
-</section>
+</section> -->
 
 			<!-- Main -->
 				<section id="main">
@@ -207,6 +235,6 @@
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
 	</body>
 </html>
