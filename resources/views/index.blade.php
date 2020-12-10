@@ -31,7 +31,7 @@
 							@if(Route::has('login'))
 								@auth
 									<li>
-										<a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Dashboard') }}</a>
+										<a href="{{ url('/admin') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Dashboard') }}</a>
 									</li>
 								@else
 									<li>
