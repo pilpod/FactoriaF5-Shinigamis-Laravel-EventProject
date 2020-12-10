@@ -50,9 +50,24 @@ class AdminDashboardTest extends TestCase
         $eventId = $event->id;
 
         $this->actingAs($user)
-            ->delete($eventId);
+            ->get(route('destroyEvent', ['id' => $eventId]))
+            ->delete();
 
         $this->assertDatabaseCount('events', 0);
 
     }
+
+    /** @test */
+    public function test_admin_can_see_form_create_event()
+    {
+        User::factory()->create(['is_admin' => true]);
+        $user = User::find(1);
+
+        $response = $this->actingAs($user)
+            ->get(route('createEvent'));
+
+        $response->assertStatus(200)
+            ->assertViewIs('eventCreate');
+    }
+    
 }

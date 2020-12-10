@@ -16,6 +16,11 @@ class AdminController extends Controller
         return view('adminDashboard', ['events' => $events]);
     }
 
+    public function create()
+    {
+        return view('eventCreate');
+    }
+
     public function delete($id)
     {
         $event = Event::find($id);
