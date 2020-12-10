@@ -82,8 +82,8 @@
 							<div class="carousel-item absolute opacity-0 bg-cover" style="height:50vh;">
 								<div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center">			
 									
-									<!-- <div class="z-10"><p>{{$outstanding[0]->title}}</p></div> -->
-									<div class="z-0"><img src="{{$outstanding[0]->picture_path}}" class="object-none w-full" alt=""></div>
+									<div class="z-10"><p>{{$outstanding[0]->title}}</p></div>
+									<div class="flex-auto"><img src="{{$outstanding[0]->picture_path}}" id="slide" class="object-cover h-full w-100%" alt=""></div>
 									
 								</div>
 							</div>
