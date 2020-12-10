@@ -69,5 +69,25 @@ class AdminDashboardTest extends TestCase
         $response->assertStatus(200)
             ->assertViewIs('eventCreate');
     }
+
+    /** @test */
+    public function test_admin_can_create_event()
+    {
+
+        $this->post(route('storeEvent'), [
+            'title' => 'title',
+            'picture_path' => 'picture_path',
+            'short_description' => 'short_description',
+            'duration' => 'duration',
+            'description' => 'description',
+            'event_date' => 'event_date',
+            'event_capacity' => 'event_capacity',
+            'outstanding' => 'outstanding',
+            'hour' => 'hour'
+            ]);
+
+        $this->assertDatabaseCount('events', 1);
+    }
+    
     
 }

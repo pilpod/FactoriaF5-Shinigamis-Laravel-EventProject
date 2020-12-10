@@ -17,7 +17,8 @@ class Event extends Model
         'description',
         'event_date',
         'event_capacity',
-        'outstanding'
+        'outstanding',
+        'hour'
     ];
 
     protected $dates = [
