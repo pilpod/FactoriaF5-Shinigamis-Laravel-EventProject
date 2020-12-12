@@ -14,6 +14,8 @@
     
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/slideshow.css') }}" rel="stylesheet">
+
     <!-- <link href="{{asset('css/main.css')}}" rel="stylesheet"> -->
 
 </head>
