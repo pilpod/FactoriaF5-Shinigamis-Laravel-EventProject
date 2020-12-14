@@ -67,9 +67,10 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit($id)
     {
-        //
+        $event = Event::find($id);
+        return view('eventEdit', compact('event'));
     }
 
     /**
@@ -81,7 +82,7 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        
     }
 
     /**

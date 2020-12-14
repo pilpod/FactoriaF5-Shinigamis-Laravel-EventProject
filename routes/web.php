@@ -29,4 +29,4 @@ Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->n
 Route::get('/admin/event/create', [\App\Http\Controllers\AdminController::class, 'create'])->name('createEvent')->middleware('admin');
 Route::post('/admin', [\App\Http\Controllers\EventController::class, 'store'])->name('storeEvent')->middleware('admin');
 Route::delete('/admin/event/{id}', [\App\Http\Controllers\EventController::class, 'destroy'])->name('destroyEvent')->middleware('admin');
-
+Route::get('/admin/event/{id}/edit', [\App\Http\Controllers\EventController::class, 'edit'])->name('editEvent')->middleware('admin');
