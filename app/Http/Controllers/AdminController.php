@@ -21,10 +21,5 @@ class AdminController extends Controller
         return view('eventCreate');
     }
 
-    public function delete($id)
-    {
-        $event = Event::find($id);
-        $event->destroy($id);
-        return view('eventDeleted', ['message' => 'OHHH!! Evento eliminado correctamente.']);
-    }
+    
 }

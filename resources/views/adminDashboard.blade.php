@@ -55,8 +55,18 @@
                             <div class="text-sm text-gray-900">{{$event->event_date->format('d-m-Y H:00')}}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900"><i class="fas fa-edit"></i></i></a>
-                            <a href="{{route('destroyEvent', ['id' => $event->id])}}" class="text-indigo-600 hover:text-indigo-900"><i class="fas fa-trash-alt"></i></a>
+
+                            <form action="" method="post">
+                                @method('put')
+                                @csrf
+                                <button type="submit" class="fas fa-edit text-indigo-600 hover:text-indigo-900"></button>
+                            </form>
+
+                            <form action="{{route('destroyEvent', $event->id)}}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="fas fa-trash-alt text-indigo-600 hover:text-indigo-900"></button>
+                            </form>
                             </td>
                         </tr>
                         @endforeach
