@@ -56,7 +56,7 @@
 <!-- Full-width images with number and caption text -->
 @foreach($outstanding as $event)
 <div class="mySlides fade overflow">
-	<div class="numbertext">bonitoooooo</div>
+	
 	<img src="{{$event->picture_path}}" style="width:100%">
 	<div class="text">{{$event->title}}</div>
 </div>
