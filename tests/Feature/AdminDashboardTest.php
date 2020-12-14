@@ -50,8 +50,7 @@ class AdminDashboardTest extends TestCase
         $eventId = $event->id;
 
         $this->actingAs($user)
-            ->get(route('destroyEvent', ['id' => $eventId]))
-            ->delete();
+            ->delete(route('destroyEvent', ['id' => $eventId]));
 
         $this->assertDatabaseCount('events', 0);
 
@@ -73,8 +72,11 @@ class AdminDashboardTest extends TestCase
     /** @test */
     public function test_admin_can_create_event()
     {
+        $user = User::factory()->create(['is_admin' => true]);
 
-        $this->post(route('storeEvent'), [
+        $this->actingAs($user);
+        
+        $event = [
             'title' => 'title',
             'picture_path' => 'picture_path',
             'short_description' => 'short_description',
@@ -84,9 +86,10 @@ class AdminDashboardTest extends TestCase
             'event_capacity' => 'event_capacity',
             'outstanding' => 'outstanding',
             'hour' => 'hour'
-            ]);
+        ];
 
-        $this->assertDatabaseCount('events', 1);
+        $this->post(route('storeEvent'), $event);
+        $this->assertDatabaseHas('events', $event);
     }
     
     

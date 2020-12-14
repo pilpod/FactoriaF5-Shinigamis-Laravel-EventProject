@@ -36,17 +36,17 @@
                                     <div class="grid grid-cols-6 gap-6">
                                       <div class="col-span-6 sm:col-span-3">
                                         <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-                                        <input type="text" name="title" id="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-400 rounded-md">
+                                        <input type="text" name="title" id="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-400 rounded-md" required>
                                       </div>
                         
                                       <div class="col-span-6 sm:col-span-3">
                                         <label for="picturePath" class="block text-sm font-medium text-gray-700">Picture Path</label>
-                                        <input type="text" name="picture_path" id="picturePath" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        <input type="text" name="picture_path" id="picturePath" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                       </div>
                         
                                       <div class="col-span-6">
                                         <label for="shortDescription" class="block text-sm font-medium text-gray-700">Short description</label>
-                                        <input type="text" name="short_description" id="shortDescription" maxlength="100" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        <input type="text" name="short_description" id="shortDescription" maxlength="100" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                       </div>
 
                                       <div class="col-span-6">
@@ -54,23 +54,23 @@
                                           Description
                                         </label>
                                         <div class="mt-1">
-                                          <textarea id="description" name="description" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Your text"></textarea>
+                                          <textarea id="description" name="description" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Your text" required></textarea>
                                         </div>
                                       </div>
                                                   
                                       <div class="col-span-2">
                                         <label for="event_date" class="block text-sm font-medium text-gray-700">Event Date</label>
-                                        <input type="date" name="event_date" id="event_date" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        <input type="date" name="event_date" id="event_date" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                       </div>
 
                                       <div class="col-span-6 sm:col-span-2">
                                         <label for="event_capacity" class="block text-sm font-medium text-gray-700">Event Capacity</label>
-                                        <input type="number" name="event_capacity" id="event_capacity" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        <input type="number" name="event_capacity" id="event_capacity" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                       </div>
 
                                       <div class="col-span-6 sm:col-span-2">
                                         <label for="duration" class="block text-sm font-medium text-gray-700">Duration</label>
-                                        <input type="text" name="duration" id="event_capacity" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        <input type="text" name="duration" id="event_capacity" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                       </div>
 
                                       <div class="col-span-6 sm:col-span-3">
