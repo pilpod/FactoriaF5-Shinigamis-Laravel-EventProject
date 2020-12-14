@@ -28,13 +28,19 @@
                     <table class="table-fixed min-w-full divide-y divide-gray-200">
                         <thead>
                         <tr>
-                            <th scope="col" class=" w-1/1 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <th scope="col" class=" w-5/6 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Event Title
                             </th>
-                            <th scope="col" class="w-1/5 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <th scope="col" class="w-2/6 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Event date
                             </th>
-                            <th scope="col" class="w-1/3 px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <th scope="col" class="w-2/6 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Event Capacity
+                            </th>
+                            <th scope="col" class="w-2/6 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Subscribers
+                            </th>
+                            <th scope="col" class="w-2/6 px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Options
                             </th>
                         </tr>
@@ -51,9 +57,30 @@
                                 </div>
                             </div>
                             </td>
+
                             <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-900">{{$event->event_date->format('d-m-Y H:00')}}</div>
+                            <div class="text-sm text-center text-gray-900">{{$event->event_date->format('d-m-Y H:00')}}</div>
                             </td>
+
+                            <td class="px-3 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">
+                                <div class="ml-4">
+                                <div class="text-sm text-center font-medium text-gray-900">
+                                    {{$event->event_capacity}}
+                                </div>
+                            </div>
+                            </td>
+
+                            <td class="px-3 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">
+                                <div class="ml-4">
+                                <div class="text-sm text-center font-medium text-gray-900">
+                                <!-- FALTA VINCULAR A TABLA PIVOTE... -->
+                                    {{$event->event_capacity}}
+                                </div>
+                            </div>
+                            </td>
+
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <a href="#" class="text-indigo-600 hover:text-indigo-900"><i class="fas fa-edit"></i></i></a>
                             <a href="{{route('destroyEvent', ['id' => $event->id])}}" class="text-indigo-600 hover:text-indigo-900"><i class="fas fa-trash-alt"></i></a>

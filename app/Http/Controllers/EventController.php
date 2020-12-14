@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -82,4 +83,11 @@ class EventController extends Controller
     {
         $event->delete();
     }
+
+    public function allEventUsers()
+    {
+        $event = Event::find($eventId);
+        $eventUser = $event->users()->get($id);
+    }
+
 }

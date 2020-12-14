@@ -13,7 +13,7 @@ class UserController extends Controller
         $userId = auth()->id();
         $user = User::find($userId);
         $userEvents = $user->events()->find($id);
-       
+               
         if($userEvents == null) {
             $user->events()->attach($id);
             $event = $user->events()->find($id);
@@ -34,4 +34,6 @@ class UserController extends Controller
             'message' => 'Unsubscribe satisfactorio del evento ',
             'title' => $userEvent->title]);
     }
+
+    
 }
