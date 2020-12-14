@@ -22,7 +22,6 @@ class UnsubcribeEventTest extends TestCase
         $user = User::factory()->create();
         Event::factory()->create();
         $event = Event::find(1);
-
         $user->events()->attach(1);
 
         $response = $this->actingAs($user)

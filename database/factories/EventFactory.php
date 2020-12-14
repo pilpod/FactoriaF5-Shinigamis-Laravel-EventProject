@@ -28,6 +28,7 @@ class EventFactory extends Factory
             'duration'=> $this->faker->word,
             'description'=> $this->faker->paragraph(),
             'event_date'=> $this->faker->dateTimeBetween('-30 days', '+30 days'),
+            'hour' => $this->faker->time('H:00'),
             'event_capacity'=> $this->faker->numberBetween(10, 100),
             'outstanding'=> $this->faker->boolean(false),
         ];

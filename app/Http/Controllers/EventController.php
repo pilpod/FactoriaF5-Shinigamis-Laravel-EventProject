@@ -35,7 +35,19 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Event::create([
+            'title' => $request->title,
+            'picture_path' => $request->picture_path,
+            'short_description' => $request->short_description,
+            'duration' => $request->duration,
+            'description' => $request->description,
+            'event_date' => $request->event_date,
+            'event_capacity' => $request->event_capacity,
+            'outstanding' => $request->outstanding,
+            'hour' => $request->hour
+        ]);
+
+        return redirect()->route('adminDashboard');
     }
 
     /**
@@ -78,8 +90,10 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
+        $event = Event::find($id);
         $event->delete();
+        return view('eventDeleted', ['message' => 'OHHH!! Evento eliminado correctamente.']);
     }
 }

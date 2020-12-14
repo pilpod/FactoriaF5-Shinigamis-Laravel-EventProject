@@ -77,9 +77,10 @@
 														<span>Fecha: <strong>{{$event->event_date->format('d-m-Y H:00')}}</strong></span>
 													</div>
 													<footer>
-														<ul class="actions">
-															<li><a href="{{route('subscribe', ['id' => $event->id])}}" class="button alt">Subscribe</a></li>
-														</ul>
+														<form action="{{route('subscribe', ['id' => $event->id])}}" method="post">
+															@csrf
+															<button type="submit" class="button alt">Subscribe</button>
+														</form>
 													</footer>
 												</section>
 											</div>
