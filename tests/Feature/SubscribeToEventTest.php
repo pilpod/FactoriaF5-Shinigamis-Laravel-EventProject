@@ -20,11 +20,11 @@ class SubscribeToEventTest extends TestCase
     {
         $user = User::factory()->create();
         $event = Event::factory()->create();
-        $eventID = $event->id;
 
-        $userView = $this->actingAs($user)
+        $userEvent = $this->actingAs($user)
             ->post(route('subscribe', $event->id));
-        $userView->assertViewHas($event->title);
-        
+
+        $userEvent->assertViewIs('suscribeResponse')
+            ->assertViewHas(['message' => 'Ole tu!!! Inscrito!!!']);
     }
 }
