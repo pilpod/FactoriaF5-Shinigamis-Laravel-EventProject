@@ -48,75 +48,34 @@
 					</nav>
 				</section>
 
-			<!-- Banner -->
-				
+				<!-- Event Detail -->   
 
-			<!-- Main -->
-				<section id="main">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
+                <div class="m-auto px-8 py-8 max-w-xxl">
+                            <div class="md:flex bg-white shadow-2xl" >
+                                <div>
+                                    <img class="w-100 h-30" src="{{$eventDetail->picture_path}}">
+                                </div>
+                                <div class="px-4 py-2 mt-2 bg-white">
+                                    <h2 class="font-bold text-2xl text-gray-800">{{$eventDetail->title}}</h2>
+                                        <p class="sm:text-sm text-xs text-gray-700 px-2 mr-1 my-3">{{$eventDetail->description}} </p>
+                                        <p><span class="font-bold text-gray-800">Date:</span> {{$eventDetail->event_date}}</p>
+                                        <p><span class="font-bold text-gray-800">Hour:</span> {{$eventDetail->hour}}</p>
+                                        <p><span class="font-bold text-gray-800">Duration:</span> {{$eventDetail->duration}}</p>
+                                        <p> <span class="font-bold text-gray-800">Available spots:</span> {{$eventDetail->event_capacity}}<p>
+                                        @if($eventDetail->event_date >= $datenow)
+                                        <a href="{{route('subscribe', $eventDetail->id)}}" class="button alt">Subscribe</a>
+                                        @endif
+                                        <div class="user flex items-center -ml-3 mt-8 mb-4">
+                                        <!-- <div class="user-logo">
+                                            <img class="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full mx-4  shadow" src="https://images.unsplash.com/photo-1607789382281-1152591ec0da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt="avatar">
+                                        </div> -->
+                                            <!-- <a href="https://twitter.com/GressierCosme1" target="_blank" class="text-gray-500">@GressierCosme1</a> -->
+                                        </div>
+                                </div>
+                            </div>
+                </div>
 
-								<!-- Events -->
-									<section>
-										<header class="major">
-											<h2>Next Events</h2>
-										</header>
-										<div class="row">
-											@foreach ($events as $event)
-											<div class="col-4 col-6-medium col-12-small">
-												<section class="box">
-												<a href="{{Route('eventDetail', $event->id)}}" class="image featured"><img src="{{$event->picture_path}}" alt="" /></a>
-													<header>
-													<h3>{{$event->title}}</h3>
-													</header>
-													<p>{{$event->short_description}}</p>
-													<div style="margin-top: 10px">
-														<span>Fecha: <strong>{{$event->event_date->format('d-m-Y H:00')}}</strong></span>
-													</div>
-													<footer>
-														<form action="{{route('subscribe', ['id' => $event->id])}}" method="post">
-															@csrf
-															<button type="submit" class="button alt">Subscribe</button>
-														</form>
-													</footer>
-												</section>
-											</div>
-											@endforeach
-										</div>
-										<section class="container">
-											{{$events->links()}}
-										</section>
-									</section>
 
-									<section>
-										<header class="major">
-											<h2>Past Events</h2>
-										</header>
-										<div class="row">
-											@foreach ($pastEvents as $event)
-												<div class="col-4 col-6-medium col-12-small">
-													<section class="box">
-													<a href= "{{Route('eventDetail', $event->id)}}" class="image featured"><img src="{{$event->picture_path}}" alt="" /></a>
-														<header>
-															<h3>{{$event->title}}</h3>
-														</header>
-														<p>{{$event->short_description}}</p>
-														<div style="margin-top: 10px">
-															<span>Fecha: <strong>{{$event->event_date->format('d-m-Y H:00')}}</strong></span>
-														</div>
-													</section>
-												</div>
-											@endforeach
-										</div>
-										<section class="container">
-											<a href="{{Route('pastevents')}}">Ver más</a>
-										</section>
-									</section>
-							</div>
-						</div>
-					</div>
-				</section>
 
 			<!-- Footer -->
 				<section id="footer">

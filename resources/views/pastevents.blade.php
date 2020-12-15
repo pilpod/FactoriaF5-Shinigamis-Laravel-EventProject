@@ -96,7 +96,7 @@
 											@foreach ($pastEvents as $event)
 											<div class="col-4 col-6-medium col-12-small">
 												<section class="box">
-												<a href="#" class="image featured"><img src="{{$event->picture_path}}" alt="" /></a>
+												<a href="{​​{​​Route('eventDetail', $event->id)}​​}​​" class="image featured"><img src="{{$event->picture_path}}" alt="" /></a>
 													<header>
 													<h3>{{$event->title}}</h3>
 													</header>
