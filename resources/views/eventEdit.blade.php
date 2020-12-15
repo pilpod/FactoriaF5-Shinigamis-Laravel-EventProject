@@ -29,7 +29,8 @@
                       <div class="mt-10 sm:mt-0">
                           <div class="mt-5 md:mt-0 md:col-span-2">
 
-                              <form action="{{route('storeEvent')}}" method="POST">
+                              <form action="{{route('updateEvent', $event)}}" method="POST">
+                                @method('put')
                                 @csrf
                                 <div class="shadow overflow-hidden sm:rounded-md">
                                   <div class="px-4 py-5 bg-white sm:p-6">
@@ -98,7 +99,12 @@
                                       <div class="col-span-6 sm:col-span-3">
                                         <label for="outstanding" class="block text-sm font-medium text-gray-700">Outstanding</label>
                                         <select id="outstanding" name="outstanding" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                          <option value="{{$event->outstanding}}">{{$event->outstanding}}</option>
+                                          @if($event->hour==0)
+                                          <option value="{{$event->outstanding}}">Normal event</option>
+                                          @endif
+                                          @if($event->hour==1)
+                                          <option value="{{$event->outstanding}}">Outstanding event</option>
+                                          @endif
                                           <option value="0">Normal event</option>
                                           <option value="1">Outstanding Event</option>
                                         </select>
