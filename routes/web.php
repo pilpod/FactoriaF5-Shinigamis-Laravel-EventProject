@@ -4,7 +4,8 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Mail\MailtrapExample;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +32,8 @@ Route::get('/admin/event/create', [\App\Http\Controllers\AdminController::class,
 Route::post('/admin', [\App\Http\Controllers\EventController::class, 'store'])->name('storeEvent')->middleware('admin');
 Route::delete('/admin/event/{id}', [\App\Http\Controllers\EventController::class, 'destroy'])->name('destroyEvent')->middleware('admin');
 
+    /* mailing routes*/
+Route::get('/send-mail', function () {
+    Mail::to('newuser@example.com')->send(new MailtrapExample());
+    return 'A message has been sent to Mailtrap';
+});
