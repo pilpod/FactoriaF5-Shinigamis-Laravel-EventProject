@@ -56,8 +56,7 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
 
-                            <form action="" method="post">
-                                @method('put')
+                            <form action="{{route('editEvent', $event->id)}}" method="get">
                                 @csrf
                                 <button type="submit" class="fas fa-edit text-indigo-600 hover:text-indigo-900"></button>
                             </form>

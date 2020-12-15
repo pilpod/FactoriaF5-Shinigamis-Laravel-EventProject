@@ -74,23 +74,11 @@ class AdminDashboardTest extends TestCase
     {
         $user = User::factory()->create(['is_admin' => true]);
 
-        $this->actingAs($user);
-        
-        $event = [
-            'title' => 'title',
-            'picture_path' => 'picture_path',
-            'short_description' => 'short_description',
-            'duration' => 'duration',
-            'description' => 'description',
-            'event_date' => 'event_date',
-            'event_capacity' => 'event_capacity',
-            'outstanding' => 'outstanding',
-            'hour' => 'hour'
-        ];
+        $event = Event::factory()->make();
 
-        $this->post(route('storeEvent'), $event);
-        $this->assertDatabaseHas('events', $event);
+        $this->actingAs($user)
+             ->post(route('storeEvent'), $event->toArray());
+
+        $this->assertEquals(1, Event::all()->count());
     }
-    
-    
 }

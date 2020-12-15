@@ -67,9 +67,10 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit($id)
     {
-        //
+        $event = Event::find($id);
+        return view('eventEdit', compact('event'));
     }
 
     /**
@@ -81,7 +82,18 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $event->title = $request->title;
+        $event->picture_path = $request->picture_path;
+        $event->short_description = $request->short_description;
+        $event->duration = $request->duration;
+        $event->description = $request->description;
+        $event->event_date = $request->event_date;
+        $event->hour = $request->hour;
+        $event->event_capacity = $request->event_capacity;
+        $event->outstanding = $request->outstanding;
+
+        $event->save();
+        return redirect()->route('adminDashboard');
     }
 
     /**
