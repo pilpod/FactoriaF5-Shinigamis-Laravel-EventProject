@@ -74,8 +74,6 @@ class AdminDashboardTest extends TestCase
     {
         $user = User::factory()->create(['is_admin' => true]);
 
-        $this->actingAs($user);
-        
         $event = [
             'title' => 'title',
             'picture_path' => 'picture_path',
@@ -88,7 +86,9 @@ class AdminDashboardTest extends TestCase
             'hour' => 'hour'
         ];
 
-        $this->post(route('storeEvent'), $event);
+        $this->actingAs($user)
+            ->post(route('storeEvent'), $event);
+            
         $this->assertDatabaseHas('events', $event);
     }
     

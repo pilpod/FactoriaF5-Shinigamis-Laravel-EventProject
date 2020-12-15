@@ -31,9 +31,14 @@ class EventUpdateTest extends TestCase
     public function test_admin_can_update_an_event()
     {
         $event = Event::factory()->create();
-        $newData = ['title'=>'new Title'];
-        $event->update($newData);
+        $user = User::factory()->create(['is_admin'=>true]);
 
-        $this->assertEquals(1, 1);
+        $event->title = 'new title';
+
+        $this->actingAs($user)
+            ->put(route('updateEvent', $event), $event->toArray());              
+
+        $this->assertDatabaseHas('events', ['id' => $event->id, 'title' => 'new title']);
     }
+
 }
