@@ -32,3 +32,5 @@ Route::post('/admin', [\App\Http\Controllers\EventController::class, 'store'])->
 Route::delete('/admin/event/{id}', [\App\Http\Controllers\EventController::class, 'destroy'])->name('destroyEvent')->middleware('admin');
 Route::get('/admin/event/{id}/edit', [\App\Http\Controllers\EventController::class, 'edit'])->name('editEvent')->middleware('admin');
 Route::put('/admin/{event}', [\App\Http\Controllers\EventController::class, 'update'])->name('updateEvent')->middleware('admin');
+
+

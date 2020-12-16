@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Jobs\SendEmail;
 use App\Models\User;
-use App\Models\Event;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -16,7 +16,7 @@ class UserController extends Controller
        
         if($userEvents == null) {
             $user->events()->attach($id);
-            $event = $user->events()->find($id);
+            SendEmail::dispatch($user->email)->delay(Carbon::now()->addSeconds(10));
             return view('suscribeResponse', ['message' => 'Ole tu!!! Inscrito!!!']);
         }
 
