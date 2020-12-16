@@ -46,6 +46,9 @@
                         </form>
                     @endguest
                 </nav>
+                <div class="container">
+                <!-- @include('slideshow') -->
+                </div>
             </div>
         </header>
 

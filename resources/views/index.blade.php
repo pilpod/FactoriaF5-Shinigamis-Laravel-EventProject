@@ -52,7 +52,8 @@
 
 						<!-- Banner -->
 						<div class="container">
-            				@yield('content')
+            				@include('layouts.slideshow')
+							
         				</div>
 						
 					
