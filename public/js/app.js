@@ -19330,7 +19330,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nError: Failed to find 'slider.css'\n  in [\n    C:\\xampp\\htdocs\\DBFactoriaF5\\shinigamievents\\resources\\css\n  ]\n    at C:\\xampp\\htdocs\\DBFactoriaF5\\shinigamievents\\node_modules\\postcss-import\\lib\\resolve-id.js:35:13\n    at C:\\xampp\\htdocs\\DBFactoriaF5\\shinigamievents\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\xampp\\htdocs\\DBFactoriaF5\\shinigamievents\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\xampp\\htdocs\\DBFactoriaF5\\shinigamievents\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\xampp\\htdocs\\DBFactoriaF5\\shinigamievents\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\xampp\\htdocs\\DBFactoriaF5\\shinigamievents\\node_modules\\postcss-loader\\src\\index.js:208:9");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -19342,6 +19342,8 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+__webpack_require__(/*! ./slideshow */ "./resources/js/slideshow.js");
 
 /***/ }),
 
@@ -19385,6 +19387,56 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/slideshow.js":
+/*!***********************************!*\
+  !*** ./resources/js/slideshow.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var slideIndex = 1;
+showSlides(slideIndex); // Next/previous controls
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+} // Thumbnail image controls
+
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block"; //method style acts on inline html style.
+
+  dots[slideIndex - 1].className += " active"; //method classname acts on css class.
+}
 
 /***/ }),
 

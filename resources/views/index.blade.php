@@ -52,7 +52,9 @@
 
 						<!-- Banner -->
 						<div class="container">
-            				@include('layouts.slideshow')
+            				
+						
+							<x-slideshow :outstanding="$outstanding"/>
 							
         				</div>
 						
