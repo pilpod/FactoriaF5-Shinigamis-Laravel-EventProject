@@ -5,19 +5,22 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Event;
 
 class Mailtrap extends Mailable
 {
     use Queueable, SerializesModels;
+
+    protected $eventTitle;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($eventTitle)
     {
-        //
+        $this->eventTitle = $eventTitle;
     }
 
     /**
@@ -29,6 +32,9 @@ class Mailtrap extends Mailable
     {
         return $this->from('shinigamis@root.com', 'Mailtrap')
             ->subject('Shinigamis Events')
-            ->view('email');
+            ->view('email')
+            ->with([
+                'title' => $this->eventTitle,
+            ]);
     }
 }

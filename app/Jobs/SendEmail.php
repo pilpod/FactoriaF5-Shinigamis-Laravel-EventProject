@@ -3,7 +3,7 @@
 namespace App\Jobs;
 
 use App\Mail\Mailtrap;
-use App\Models\User;
+use App\Models\Event;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -17,15 +17,18 @@ class SendEmail implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $userEmail;
+    protected $eventTitle;
+    protected $eventHour;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($userEmail)
+    public function __construct($userEmail, $eventTitle)
     {
         $this->userEmail = $userEmail;
+        $this->eventTitle = $eventTitle;
     }
 
     /**
@@ -35,7 +38,7 @@ class SendEmail implements ShouldQueue
      */
     public function handle()
     {
-        $email = new Mailtrap();
+        $email = new Mailtrap($this->eventTitle);
         Mail::to($this->userEmail)->send($email);
     }
 
