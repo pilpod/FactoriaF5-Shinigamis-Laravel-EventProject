@@ -81,7 +81,10 @@
 													</header>
 													<p>{{$event->short_description}}</p>
 													<div style="margin-top: 10px">
-														<span>Fecha: <strong>{{$event->event_date->format('d-m-Y H:00')}}</strong></span>
+														<span>Fecha: <strong>{{$event->event_date->format('d-m-Y')}}</strong></span>
+													</div>
+													<div style="margin-top: 10px">
+														<span>Hora: <strong>{{$event->hour}}</strong></span>
 													</div>
 													<footer>
 														<form action="{{route('subscribe', ['id' => $event->id])}}" method="post">

@@ -31,8 +31,11 @@
                             <th scope="col" class=" w-1/1 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Event Title
                             </th>
-                            <th scope="col" class="w-1/5 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <th scope="col" class="w-1/6 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Event date
+                            </th>
+                            <th scope="col" class="w-1/7 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Hour
                             </th>
                             <th scope="col" class="w-1/3 px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Options
@@ -52,8 +55,11 @@
                             </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-900">{{$event->event_date->format('d-m-Y H:00')}}</div>
+                            <div class="text-sm text-gray-900">{{$event->event_date->format('d-m-Y')}}</div>
                             </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900">{{$event->hour}}</div>
+                                </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
 
                             <form action="{{route('editEvent', $event->id)}}" method="get">

@@ -33,11 +33,11 @@
 										</li>
 									@else
 										<li>
-											<a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Login') }}</a>
+											<a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Login') }}</a>
 										</li>
 										@if (Route::has('register'))
 											<li>
-												<a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
+												<a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800">{{ __('Register') }}</a>
 											</li>												
 										@endif
 									@endauth
@@ -46,39 +46,7 @@
 						</nav>
 
 					<!-- Banner -->
-						{{-- <section>
-						<div class"container-fluid">
-							<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-							<ol class="carousel-indicators">
-							@foreach($outstanding as $item)
-								<li data-target="#carouselExampleIndicators" data-slide-to="{{$item->event_date}}" class="@if($loop->index==0) active @endif"></li>
-							
-								@endforeach
-							</ol>
-
-							<div class="carousel-inner">
-							@foreach ($outstanding as $item)
-								<div class="carousel-item @if($loop->index==0) active @endif">
-									<img src="{{$item->picture_path}}" class="d-block w-100 h-72" alt="">
-									<div class="carousel-caption d-none d-md-block">
-										<h3>{{$item->title}}</h3>
-										<p>{{$item->short_description}}</p>
-										<input type="button" href="??" value="More Details">
-									</div>
-							</div>
-								
-							@endforeach
-							<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-							</div>
-						</div>
-						</section> --}}
+						
 				</section>
 
 			<!-- Main -->
@@ -96,13 +64,16 @@
 											@foreach ($pastEvents as $event)
 											<div class="col-4 col-6-medium col-12-small">
 												<section class="box">
-												<a href="{​​{​​Route('eventDetail', $event->id)}​​}​​" class="image featured"><img src="{{$event->picture_path}}" alt="" /></a>
+												<div class="image featured"><img src="{{$event->picture_path}}" alt="" /></div>
 													<header>
 													<h3>{{$event->title}}</h3>
 													</header>
 													<p>{{$event->short_description}}</p>
 													<div style="margin-top: 10px">
-														<span>Fecha: <strong>{{$event->event_date->format('d-m-Y H:00')}}</strong></span>
+														<span>Fecha: <strong>{{$event->event_date->format('d-m-Y')}}</strong></span>
+													</div>
+													<div style="margin-top: 10px">
+														<span>Hora: <strong>{{$event->hour}}</strong></span>
 													</div>
 												</section>
 											</div>
