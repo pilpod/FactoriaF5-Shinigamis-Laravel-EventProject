@@ -4,7 +4,4 @@
 
 @import "tailwindcss/utilities";
 
-#btnCreateEvent {
-    text-align: right;
-    margin-bottom: 10px;
-}
+@import "slideshow.css";

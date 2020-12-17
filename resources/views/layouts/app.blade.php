@@ -46,6 +46,7 @@
                         </form>
                     @endguest
                 </nav>
+               
             </div>
         </header>
 
