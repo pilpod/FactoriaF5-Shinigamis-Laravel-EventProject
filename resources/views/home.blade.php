@@ -33,6 +33,9 @@
                             <th scope="col" class="w-1/5 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Event date
                             </th>
+                            <th scope="col" class="w-1/7 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Hour
+                            </th>
                             <th scope="col" class="px-6 py-3 bg-gray-50">
                             <span class="sr-only">Unsubscribe</span>
                             </th>
@@ -55,8 +58,11 @@
                             </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-900">{{$event->event_date->format('d-m-Y H:00')}}</div>
+                            <div class="text-sm text-gray-900">{{$event->event_date->format('d-m-Y')}}</div>
                             </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900">{{$event->hour}}</div>
+                                </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <form action="{{route('unsubscribe', ['id' => $event->id])}}" method="post">
                                     @method('delete')
