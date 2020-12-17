@@ -9,6 +9,8 @@ class Event extends Model
 {
     use HasFactory;
 
+    protected $subscribers;
+
     protected $fillable = [
         'title',
         'picture_path',
@@ -30,5 +32,11 @@ class Event extends Model
         return $this->belongsToMany('App\Models\User');
     }
     
+    // public function countingSubscribers()
+    // {
+    //     $users= $this->users()->get();
+    //     $subscribers= $this->subscribers = count($users);
+    //     return $subscribers;
+    // }
 
 }

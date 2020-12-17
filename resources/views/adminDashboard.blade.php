@@ -76,7 +76,7 @@
                                 <div class="ml-4">
                                 <div class="text-sm text-center font-medium text-gray-900">
                                 <!-- FALTA VINCULAR A TABLA PIVOTE... -->
-                                    {{$event->event_capacity}}
+                                    {{$event->subscribers}}
                                 </div>
                             </div>
                             </td>

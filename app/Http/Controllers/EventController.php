@@ -110,10 +110,19 @@ class EventController extends Controller
         return view('eventDeleted', ['message' => 'OHHH!! Evento eliminado correctamente.']);
     }
 
-    public function allEventUsers()
-    {
-        $event = Event::find($eventId);
-        $eventUser = $event->users()->get($id);
-    }
+    // public function allEventUsers()
+    // {
+    //     $event = Event::find($eventId);
+    //     $eventUser = $event->users()->get($id);
+    // }
+    
+    
 
+    public function eventCapacityCountdown($id)
+    {
+        $eventCapacity= Event::find($id->event_capacity);
+        
+        // Le descontamos los suscritos.
+        // Devolvemos el numero que se muestre en Suscribers (dashboard)
+    }
 }

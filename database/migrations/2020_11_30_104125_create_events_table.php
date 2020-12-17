@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->longText('description');
             $table->dateTime('event_date');
             $table->integer('event_capacity');
+            $table->integer('subscribers')->default(0);
             $table->boolean('outstanding');
             $table->timestamps();
         });

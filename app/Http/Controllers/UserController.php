@@ -17,6 +17,7 @@ class UserController extends Controller
         if($userEvents == null) {
             $user->events()->attach($id);
             $event = $user->events()->find($id);
+            
             return view('suscribeResponse', ['message' => 'Ole tu!!! Inscrito!!!']);
         }
 
