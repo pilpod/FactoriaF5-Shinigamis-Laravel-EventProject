@@ -63,8 +63,11 @@
                                         <p><span class="font-bold text-gray-800">Duration:</span> {{$eventDetail->duration}}</p>
                                         <p> <span class="font-bold text-gray-800">Available spots:</span> {{$eventDetail->event_capacity}}<p>
                                         @if($eventDetail->event_date >= $datenow)
-                                        <a href="{{route('subscribe', $eventDetail->id)}}" class="button alt">Subscribe</a>
-                                        @endif
+                                        <form action="{{route('subscribe', ['id' => $eventDetail->id])}}" method="post">
+															@csrf
+															<button type="submit" class="button alt">Subscribe</button>
+														</form>
+										@endif
                                         <div class="user flex items-center -ml-3 mt-8 mb-4">
                                         <!-- <div class="user-logo">
                                             <img class="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full mx-4  shadow" src="https://images.unsplash.com/photo-1607789382281-1152591ec0da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt="avatar">
