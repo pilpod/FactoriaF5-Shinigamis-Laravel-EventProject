@@ -14,7 +14,8 @@
     
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link href="{{ mix('css/slideshow.css') }}" rel="stylesheet">
+    
+    <link href="{{asset('css/slideshow.css')}}" rel="stylesheet">
 
     <!-- <link href="{{asset('css/main.css')}}" rel="stylesheet"> -->
 
@@ -46,9 +47,7 @@
                         </form>
                     @endguest
                 </nav>
-                <div class="container">
-                <!-- @include('slideshow') -->
-                </div>
+               
             </div>
         </header>
 

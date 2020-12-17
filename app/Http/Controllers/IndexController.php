@@ -17,7 +17,6 @@ class IndexController extends Controller
     {
         $datenow = date('Y-m-d', time());
         $outstanding = Event::where('outstanding', '=' , true)->orderBy('event_date', 'ASC')->limit(5)->get();
-        // dd($outstanding);
         $events = Event::whereDate('event_date', '>=' , $datenow)->orderBy('event_date', 'ASC')->paginate(6);
         $pastEvents = Event::whereDate('event_date', '<' , $datenow)->orderBy('event_date', 'DESC')->limit(3)->get();
         return view('index', compact('outstanding','events', 'pastEvents'));
