@@ -20,14 +20,14 @@ class UnsubcribeEventTest extends TestCase
     public function test_unsuscribe_route()
     {
         $user = User::factory()->create();
-        Event::factory()->create();
-        $event = Event::find(1);
+        $event = Event::factory()->create();
 
-        $user->events()->attach(1);
+        $this->actingAs($user)
+            ->post(route('subscribe', $event->id));
 
-        $response = $this->actingAs($user)
-                ->get('unsubscribe/' . $event->id);
+        $userEvent = $this->delete(route('unsubscribe', $event->id));
 
-        $response->assertStatus(200);
+        $userEvent->assertViewIs('unsubscribeResponse')
+            ->assertViewHas(['message' => 'Unsubscribe satisfactorio del evento ']);
     }
 }

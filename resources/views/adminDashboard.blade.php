@@ -21,7 +21,7 @@
         <section style="margin-top: 20px;">
 
             <div class="flex flex-col">
-                <span id="btnCreateEvent"><a href=""><i class="fas fa-plus-square"></i> Create Event</a></span>
+            <span id="btnCreateEvent"><a href="{{route('createEvent')}}"><i class="fas fa-plus-square"></i> Create Event</a></span>
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -82,8 +82,17 @@
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900"><i class="fas fa-edit"></i></i></a>
-                            <a href="{{route('destroyEvent', ['id' => $event->id])}}" class="text-indigo-600 hover:text-indigo-900"><i class="fas fa-trash-alt"></i></a>
+
+                            <form action="{{route('editEvent', $event->id)}}" method="get">
+                                @csrf
+                                <button type="submit" class="fas fa-edit text-indigo-600 hover:text-indigo-900"></button>
+                            </form>
+
+                            <form action="{{route('destroyEvent', $event->id)}}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="fas fa-trash-alt text-indigo-600 hover:text-indigo-900"></button>
+                            </form>
                             </td>
                         </tr>
                         @endforeach

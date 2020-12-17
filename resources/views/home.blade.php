@@ -58,7 +58,13 @@
                             <div class="text-sm text-gray-900">{{$event->event_date->format('d-m-Y H:00')}}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="{{route('unsubscribe', ['id' => $event->id])}}" class="text-indigo-600 hover:text-indigo-900">Unsubscribe</a>
+                                <form action="{{route('unsubscribe', ['id' => $event->id])}}" method="post">
+                                    @method('delete')
+                                    @csrf
+                                    <input type="submit" value="Unsubscribe" class="text-indigo-600 hover:text-indigo-900">
+                                </form>
+
+                            {{-- <a href="{{route('unsubscribe', ['id' => $event->id])}}" class="text-indigo-600 hover:text-indigo-900">Unsubscribe</a> --}}
                             </td>
                         </tr>
                         @endforeach

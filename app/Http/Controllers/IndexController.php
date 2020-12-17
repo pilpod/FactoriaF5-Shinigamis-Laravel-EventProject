@@ -29,5 +29,10 @@ class IndexController extends Controller
         return view('pastevents', compact('pastEvents'));
     }
 
-    
+    public function eventDetail($id)
+    {
+        $datenow = date('Y-m-d', time());
+        $eventDetail = Event::find($id);
+        return view('eventDetail', compact('eventDetail', 'datenow'));
+    }
 }

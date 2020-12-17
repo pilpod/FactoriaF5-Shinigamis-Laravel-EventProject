@@ -18,12 +18,13 @@ class SubscribeToEventTest extends TestCase
      */
     public function test_btn_subscribe_send_id_event()
     {
-        Event::factory(1)->create();
-        $event = Event::find(1);
-        $id = $event->id;
+        $user = User::factory()->create();
+        $event = Event::factory()->create();
 
-        $response = $this->get('subscribe/' . $id);
+        $userEvent = $this->actingAs($user)
+            ->post(route('subscribe', $event->id));
 
-        $response->assertStatus(302);
+        $userEvent->assertViewIs('suscribeResponse')
+            ->assertViewHas(['message' => 'Ole tu!!! Inscrito!!!']);
     }
 }
