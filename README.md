@@ -1,3 +1,37 @@
+## Introdución
+
+- Web de eventos en la cual un administrador puede crear, editar y eliminar eventos. Y los usuarios pueden registrarse así como inscribirse a los eventos y desde su dashboard cancelar sus suscripciones de los eventos.
+
+## Requisitos
+- Laravel 8
+- php 7.4
+- composer (the last)
+- tailwind ui auth
+- livewire
+- database mySQL
+- plantilla HTML5 Dopetrope (https://html5up.net/dopetrope)
+
+## Instalación
+- composer create -project --prefer -dist laravel/laravel <name>
+- composer require laravel -frontend -presets/tailwindcss --dev
+- php artisan ui tailwindcss --auth
+- npm install && npm run dev
+- php artisan migrate
+
+## Running App
+- php artisan serve
+- php artisan queue:work
+
+## Creators (Factoria F5)
+- Pilpod
+- Lady Gise
+- RaykoTab
+- Moiiiiiiii
+- Lore(da)na
+
+<p align="center"><a href="#" target="_blank"><img src="https://github.com/pilpod/FactoriaF5-Shinigamis-Laravel-EventProject/blob/Develop/repository/img/homePageDef.png" width="400"></a></p>
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
