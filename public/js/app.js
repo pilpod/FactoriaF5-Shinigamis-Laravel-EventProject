@@ -19447,8 +19447,8 @@ function showSlides(n) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\PROYECTOS\FactoriaF5-Shinigamis-Laravel-EventProject\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\PROYECTOS\FactoriaF5-Shinigamis-Laravel-EventProject\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! C:\xampp\htdocs\DBFactoriaF5\shinigamievents\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\DBFactoriaF5\shinigamievents\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })
