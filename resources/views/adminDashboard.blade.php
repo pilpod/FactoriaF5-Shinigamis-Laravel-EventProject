@@ -30,16 +30,16 @@
                     <table class="table-fixed min-w-full divide-y divide-gray-200">
                         <thead>
                         <tr>
-                            <th scope="col" class=" w-1/1 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <th scope="col" class=" w-1/1 px-6 py-3 bg-gray-50 text-left text-base font-medium text-gray-500 uppercase tracking-wider">
                             Event Title
                             </th>
-                            <th scope="col" class="w-1/6 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <th scope="col" class="w-1/6 px-6 py-3 bg-gray-50 text-left text-base font-medium text-gray-500 uppercase tracking-wider">
                             Event date
                             </th>
-                            <th scope="col" class="w-1/7 px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <th scope="col" class="w-1/7 px-6 py-3 bg-gray-50 text-left text-base font-medium text-gray-500 uppercase tracking-wider">
                             Hour
                             </th>
-                            <th scope="col" class="w-1/3 px-6 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <th scope="col" class="w-1/3 px-6 py-3 bg-gray-50 text-right text-base font-medium text-gray-500 uppercase tracking-wider">
                             Options
                             </th>
                         </tr>
@@ -63,17 +63,18 @@
                                 <div class="text-sm text-gray-900">{{$event->hour}}</div>
                                 </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <div class="flex justify-end px-5 text-xl">
+                                    <form action="{{route('editEvent', $event->id)}}" method="get">
+                                        @csrf
+                                        <button type="submit" class="fas fa-edit text-indigo-600 hover:text-indigo-900 px-2"></button>
+                                    </form>
 
-                            <form action="{{route('editEvent', $event->id)}}" method="get">
-                                @csrf
-                                <button type="submit" class="fas fa-edit text-indigo-600 hover:text-indigo-900"></button>
-                            </form>
-
-                            <form action="{{route('destroyEvent', $event->id)}}" method="post">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="fas fa-trash-alt text-indigo-600 hover:text-indigo-900"></button>
-                            </form>
+                                    <form action="{{route('destroyEvent', $event->id)}}" method="post">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="fas fa-trash-alt text-indigo-600 hover:text-indigo-900"></button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach
