@@ -39,7 +39,13 @@
                             <th scope="col" class="w-1/7 px-6 py-3 bg-gray-50 text-left text-base font-medium text-gray-500 uppercase tracking-wider">
                             Hour
                             </th>
-                            <th scope="col" class="w-1/3 px-6 py-3 bg-gray-50 text-right text-base font-medium text-gray-500 uppercase tracking-wider">
+                            <th scope="col" class="w-1/7 px-6 py-3 bg-gray-50 text-left text-base font-medium text-gray-500 uppercase tracking-wider">
+                            Capacity
+                            </th>
+                            <th scope="col" class="w-1/7 px-6 py-3 bg-gray-50 text-left text-base font-medium text-gray-500 uppercase tracking-wider">
+                            Subscribers
+                            </th>
+                            <th scope="col" class="w-1/6 px-6 py-3 bg-gray-50 text-right text-base font-medium text-gray-500 uppercase tracking-wider">
                             Options
                             </th>
                         </tr>
@@ -62,6 +68,24 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="text-sm text-gray-900">{{$event->hour}}</div>
                                 </td>
+                    
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900">
+                                    <div class="text-sm text-center font-medium text-gray-900">
+                                    {{$event->event_capacity}}
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">
+                                <div class="text-sm text-center font-medium text-gray-900">
+                                <!-- FALTA VINCULAR A TABLA PIVOTE... -->
+                                    {{$event->subscribers}}
+                                </div>
+                            </div>
+                            </td>
+
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div class="flex justify-end px-5 text-xl">
                                     <form action="{{route('editEvent', $event->id)}}" method="get">

@@ -30,5 +30,9 @@ class Event extends Model
         return $this->belongsToMany('App\Models\User');
     }
     
-
+    public function getEventUsers() {
+        $users = $this->users()->get();
+        
+        return count($users);
+    }
 }

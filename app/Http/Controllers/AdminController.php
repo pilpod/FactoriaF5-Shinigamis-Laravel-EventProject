@@ -12,7 +12,12 @@ class AdminController extends Controller
     public function index()
     {
         $events = Event::orderBy('event_date', 'ASC')->get();
-        
+        $subscribedEventUsers = [];
+        foreach($events as $event){
+            $usersCount = $events->find($event->id)->getEventUsers();
+            array_push($subscribedEventUsers, $usersCount);
+        }
+        dd($subscribedEventUsers);
         return view('adminDashboard', ['events' => $events]);
     }
 
@@ -22,4 +27,11 @@ class AdminController extends Controller
     }
 
     
+    // public function getEventUsers($eventId) {
+
+    //     $event = new Event();
+    //     $event = $event->find($eventId);
+    //     return $event->users()->get();
+        
+    // }
 }
