@@ -29,7 +29,7 @@
 - Moiiiiiiii
 - Lore(da)na
 
-<p align="center"><a href="#" target="_blank"><img src="https://github.com/pilpod/FactoriaF5-Shinigamis-Laravel-EventProject/blob/Develop/repository/img/sketch-eventsProject.JPG" width="400"></a></p>
+<p align="center"><a href="#" target="_blank"><img src="https://github.com/pilpod/FactoriaF5-Shinigamis-Laravel-EventProject/blob/master/repository/img/sketch-eventsProject.JPG" width="400"></a></p>
 
 <p align="center"><a href="#" target="_blank"><img src="https://github.com/pilpod/FactoriaF5-Shinigamis-Laravel-EventProject/blob/Develop/repository/img/homePageDef.png" width="400"></a></p>
 
